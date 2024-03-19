@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+      const body = document.getElementsByTagName('body')[0]
+      body.setAttribute('style', 'box-sizing:border-box; padding:0; margin:0;')
+
+
+      // general parent 
+      const demo = document.getElementsByTagName('div')[0];
+       console.log("demo", demo);
+
+       // child of demo
+       const header = document.createElement('div');
+       header.innerHTML = "HEADER";
+       header.setAttribute('style', 'height:140px; width:100%; background-color:blue; color: white; font-size: 50px; display:flex; align-items:center; justify-content:center;');
+       demo.appendChild(header);
+
+
+       // also child of demo & also parent of both sidebar and section
+        const middle = document.createElement('div')
+        middle.setAttribute('style',  'display:flex;' )
+        demo.appendChild(middle)  
+        
+        
+        // child of middle
+        const sideBar = document.createElement('div')
+        sideBar.innerHTML = 'SIDEBAR'
+        sideBar.setAttribute('style', 'background-color:red; width:100vw; height:500px; color: white; font-size: 50px; display:flex; align-items:center; justify-content:center;' )
+        middle.appendChild(sideBar)
+
+
+
+        // child of middle & also parent for both sectionA & sectionB
+        const section = document.createElement('div')
+        section.setAttribute('style', 'display:flex; flex-direction:column;' )
+        middle.appendChild(section)
+
+
+        // child of section
+        const sectionA = document.createElement('div')
+        sectionA.innerHTML = 'SECTION A'
+        sectionA.setAttribute('style', 'background-color:green; width:50vw; height:250px; color: white; font-size: 50px; display:flex; align-items:center; justify-content:center;')
+        section.appendChild(sectionA)
+
+
+        // child of section
+        const sectionB = document.createElement('div')
+        sectionB.innerHTML = 'SECTION B'
+        sectionB.setAttribute('style', 'background-color:yellow; width:50vw; height:250px; color: red; font-size: 50px; display:flex; align-items:center; justify-content:center;')
+        section.appendChild(sectionB)
+
+
+        // child of demo
+        const footer = document.createElement('div');
+       footer.innerHTML = "FOOTER";
+       footer.setAttribute('style', 'height:140px; width:100%; background-color:black; color: white; font-size: 50px; display:flex; align-items:center; justify-content:center;');
+       demo.appendChild(footer);
+       
+       </script>
+</body>
+</html>
